@@ -1,10 +1,10 @@
 from django.contrib import admin
 
-from apps.property.models import Amenites, Property
+from apps.property.models import Amenities, Property
 
 
-@admin.register(Amenites)
-class AmenitesAdmin(admin.ModelAdmin):
+@admin.register(Amenities)
+class AmenitiesAdmin(admin.ModelAdmin):
     list_display = ("id", "name", "created_at")
 
 

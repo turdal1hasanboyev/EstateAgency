@@ -45,8 +45,9 @@ class Property(BaseModel):
         return super().save(*args, **kwargs)
 
 
-class Amenites(BaseModel):
+class Amenities(BaseModel):
     name = models.CharField(max_length=225, null=True, blank=True)
+    property = models.ManyToManyField(Property, blank=True)
 
     def __str__(self) -> str:
         return f"{ self.id } - { self.name }"

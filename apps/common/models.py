@@ -17,3 +17,14 @@ class Service(BaseModel):
 
     def __str__(self) -> str:
         return f"{ self.id } - { self.name }"
+    
+
+class Testimonials(BaseModel):
+    male_name = models.CharField(max_length=225, null=True, blank=True)
+    female_name = models.CharField(max_length=225, null=True, blank=True)
+    testimonial = RichTextField(null=True, blank=True)
+    image = models.ImageField(upload_to='testimonials/', null=True, blank=True)
+
+    def __str__(self) -> str:
+        return f"{ self.id } - { self.male_name } - { self.female_name }"
+ 
