@@ -1,10 +1,10 @@
 from django.db import models
 
 import uuid
-from ckeditor.fields import RichTextField
 from django.template.defaultfilters import slugify 
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
+from ckeditor.fields import RichTextField
 
 from apps.common.models import BaseModel
 from apps.agent.models import Agent

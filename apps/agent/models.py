@@ -1,9 +1,9 @@
 from django.db import models
 
 import uuid
-from ckeditor.fields import RichTextField
 from django.template.defaultfilters import slugify 
 from django.urls import reverse
+from ckeditor.fields import RichTextField
 
 from apps.common.models import BaseModel
 
