@@ -19,9 +19,6 @@ class Agent(BaseModel):
     skype = models.CharField(null=True, blank=True, max_length=225)
     mobil_phone = models.CharField(null=True, blank=True, max_length=225)
 
-    def __str__(self) -> str:
-        return f"{ self.id } - { self.name }"
-    
     def get_absolute_url(self):
         return reverse("agent-single", kwargs={"slug": self.slug})
     
@@ -30,4 +27,7 @@ class Agent(BaseModel):
             self.slug = f"{slugify(self.name)}-{uuid.uuid4()}"
 
         return super().save(*args, **kwargs)
+    
+    def __str__(self) -> str:
+        return f"{ self.id } - { self.name }"
     

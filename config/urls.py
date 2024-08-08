@@ -29,7 +29,6 @@ urlpatterns = [
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
 
-    path('', include('apps.common.urls')),
     path('', include('apps.user.urls')),
     path('', include('apps.contact.urls')),
     path('', include('apps.property.urls')),

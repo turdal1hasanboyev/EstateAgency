@@ -31,9 +31,6 @@ class Property(BaseModel):
     beds = models.IntegerField(default=0, null=True, blank=True)
     boths = models.IntegerField(default=0, null=True, blank=True)
     garage = models.IntegerField(default=0, null=True, blank=True)
-
-    def __str__(self) -> str:
-        return f"{ self.id } - { self.name }"
     
     def get_absolute_url(self):
         return reverse("property-single", kwargs={"slug": self.slug})
@@ -43,6 +40,9 @@ class Property(BaseModel):
             self.slug = f"{slugify(self.name)}-{uuid.uuid4()}"
 
         return super().save(*args, **kwargs)
+    
+    def __str__(self) -> str:
+        return f"{ self.id } - { self.name }"
 
 
 class Amenities(BaseModel):
