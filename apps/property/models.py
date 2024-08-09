@@ -29,8 +29,8 @@ class Property(BaseModel):
     status = models.IntegerField(default=None, choices=STATUS, null=True, blank=True)
     area = models.IntegerField(default=0, null=True, blank=True)
     beds = models.IntegerField(default=0, null=True, blank=True)
-    boths = models.IntegerField(default=0, null=True, blank=True)
-    garage = models.IntegerField(default=0, null=True, blank=True)
+    baths = models.IntegerField(default=0, null=True, blank=True)
+    garages = models.IntegerField(default=0, null=True, blank=True)
     
     def get_absolute_url(self):
         return reverse("property-single", kwargs={"slug": self.slug})

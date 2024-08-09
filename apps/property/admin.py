@@ -11,4 +11,4 @@ class AmenitiesAdmin(admin.ModelAdmin):
 @admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ["name"]}
-    list_display = ("id", "name", "price", "type", "agent", "status", "area", 'created_at')
+    list_display = ("id", "name", "price", "location", "type", "agent", "status", "area", 'created_at')

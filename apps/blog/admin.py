@@ -16,5 +16,5 @@ class CommentAdmin(admin.ModelAdmin):
 
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ("id", "author", "category", "created_at")
+    list_display = ("id", "name", "author", "category", "created_at")
     prepopulated_fields = {"slug": ["name"]}
