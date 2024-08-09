@@ -17,7 +17,7 @@ class Agent(BaseModel):
     email_2 = models.EmailField(unique=True, null=True, blank=True, max_length=225)
     phone = models.CharField(null=True, blank=True, max_length=225)
     skype = models.CharField(null=True, blank=True, max_length=225)
-    mobil_phone = models.CharField(null=True, blank=True, max_length=225)
+    mobile_phone = models.CharField(null=True, blank=True, max_length=225)
 
     def get_absolute_url(self):
         return reverse("agent-single", kwargs={"slug": self.slug})
