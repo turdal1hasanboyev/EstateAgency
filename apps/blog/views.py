@@ -37,4 +37,4 @@ def blog_single(request, slug):
         "comments": comments,
     }
 
-    return render(request, "blog-single", context)
+    return render(request, "blog-single.html", context)

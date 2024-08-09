@@ -35,4 +35,4 @@ def property_single(request, slug):
         "amenities": amenities,
     }
 
-    return render(request, "property-single", context)
+    return render(request, "property-single.html", context)
