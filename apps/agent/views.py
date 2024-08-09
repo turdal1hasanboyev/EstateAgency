@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 
 from apps.agent.models import Agent
 from apps.property.models import Property
@@ -12,7 +12,7 @@ def agent(request):
 def agent_single(request, slug):
     agent = Agent.objects.get(slug__iexact=slug)
 
-    my_properties = Property.objects.filter(agent=agent).order_by("-id")
+    my_properties = Property.objects.filter(agent_id=agent.id).order_by("-id")
 
     context = {
         "agent": agent,

@@ -21,7 +21,7 @@ def blog_single(request, slug):
 
         Comment.objects.create(
             blog_id=blog.id,
-            user=request.user,
+            user_id=request.user.id,
             name=name,
             email=email,
             message=message,

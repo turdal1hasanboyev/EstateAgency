@@ -14,7 +14,7 @@ def property_single(request, slug):
 
     property = Property.objects.get(slug__iexact=slug)
 
-    amenities = Amenities.objects.filter(property=property)
+    amenities = Amenities.objects.filter(property_id=property.id)
 
     if request.method == "POST":
         name = request.POST.get("name")
@@ -22,7 +22,7 @@ def property_single(request, slug):
         message = request.POST.get("message")
 
         AgentContact.objects.create(
-            agent=property.agent,
+            agent_id=property.agent.id,
             name=name,
             email=email,
             message=message,
