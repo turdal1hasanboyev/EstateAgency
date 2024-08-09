@@ -5,7 +5,7 @@ from apps.property.models import Amenities, Property
 
 @admin.register(Amenities)
 class AmenitiesAdmin(admin.ModelAdmin):
-    list_display = ("id", "name", "created_at")
+    list_display = ("id", "name", "property", "created_at")
 
 
 @admin.register(Property)

@@ -47,7 +47,7 @@ class Property(BaseModel):
 
 class Amenities(BaseModel):
     name = models.CharField(max_length=225, null=True, blank=True)
-    property = models.ManyToManyField(Property, blank=True)
+    property = models.ForeignKey(Property, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self) -> str:
         return f"{ self.id } - { self.name }"
