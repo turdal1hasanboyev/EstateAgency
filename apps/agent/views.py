@@ -12,7 +12,7 @@ def agent(request):
 def agent_single(request, slug):
     agent = Agent.objects.get(slug__iexact=slug)
 
-    my_properties = Property.objects.filter(agent=agent.id).order_by("-id")
+    my_properties = Property.objects.filter(agent=agent).order_by("-id")
 
     context = {
         "agent": agent,

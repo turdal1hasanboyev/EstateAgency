@@ -10,13 +10,6 @@ from apps.common.models import BaseModel
 
 class Category(BaseModel):
     name = models.CharField(max_length=225, null=True, blank=True)
-    slug = models.SlugField(unique=True, max_length=225, null=True, blank=True)
-    
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = f"{slugify(self.name)}-{uuid.uuid4()}"
-
-        return super().save(*args, **kwargs)
     
     def __str__(self) -> str:
         return f"{ self.id } - { self.name }"

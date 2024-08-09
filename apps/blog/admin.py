@@ -6,7 +6,6 @@ from apps.blog.models import Category, Comment, Blog
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'created_at')
-    prepopulated_fields = {"slug": ["name"]}
 
 
 @admin.register(Comment)

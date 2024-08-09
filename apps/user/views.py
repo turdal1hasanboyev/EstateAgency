@@ -25,12 +25,12 @@ def home(request):
     services = Service.objects.all().order_by("-id")[:3]
     best_agents = Agent.objects.all().order_by("id")[:3]
     testimonials = Testimonials.objects.all().order_by("id")[:2]
-    latest_news = Blog.objects.all().order_by("-id")[:4]
+    latest_news = Blog.objects.all().order_by("-id")[:6]
      
     context = {
         "banner": property.order_by("-id")[:3],
         "services": services,
-        "latest_properties": property.order_by("id")[:4],
+        "latest_properties": property.order_by("id")[:3],
         "best_agents": best_agents,
         "testimonials": testimonials,
         "latest_news": latest_news,

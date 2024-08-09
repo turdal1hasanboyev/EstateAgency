@@ -9,8 +9,6 @@ def blog(request):
     return render(request, "blog-grid.html", {"blogs": blogs})
 
 def blog_single(request, slug):
-    url = request.META.get('HTTP_REFERER')
-
     blog = Blog.objects.get(slug__iexact=slug)
 
     comments = Comment.objects.filter(blog_id=blog.id)
@@ -30,7 +28,7 @@ def blog_single(request, slug):
             website=website,
         )
 
-        return redirect(url)
+        return redirect("blog-single", blog.slug)
 
     context = {
         "blog": blog,

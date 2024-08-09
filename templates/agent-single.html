@@ -16,10 +16,10 @@
       <div class="col-md-12 col-lg-4">
         <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item">
+            <li class="breadcrumb-item active">
               <a href="{% url "home" %}">Home</a>
             </li>
-            <li class="breadcrumb-item">
+            <li class="breadcrumb-item active">
               <a href="{% url "agent" %}">Agents</a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">
@@ -52,7 +52,7 @@
               </div>
               <div class="agent-content mb-3">
                 <p class="content-d color-text-a">
-                  {{ agent.description|slice:"320"|safe }}
+                  {{ agent.description|safe }}
                 </p>
                 <div class="info-agents color-a">
                   <p>
@@ -112,7 +112,7 @@
       </div>
       <div class="col-md-12 section-t8">
         <div class="title-box-d">
-          <h3 class="title-d">My Properties</h3>
+          <h3 class="title-d">My Properties ({{ agent.property_set.count }})</h3>
         </div>
       </div>
       <div class="row property-grid grid">
