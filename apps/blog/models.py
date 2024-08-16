@@ -3,6 +3,7 @@ from django.db import models
 import uuid
 from django.template.defaultfilters import slugify 
 from django.urls import reverse
+
 from ckeditor.fields import RichTextField
 
 from apps.common.models import BaseModel
@@ -41,7 +42,7 @@ class Comment(BaseModel):
     user = models.ForeignKey("user.User", on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=225, null=True, blank=True)
     email = models.EmailField(unique=True, null=True, blank=True)
-    website = models.URLField(unique=True, null=True, blank=True)
+    web_site = models.URLField(unique=True, null=True, blank=True)
     message = RichTextField(null=True, blank=True)
 
     def __str__(self) -> str:

@@ -5,9 +5,9 @@ from apps.contact.models import AgentContact
 
 
 def property(request):
-    properties = Property.objects.all().order_by("id")[:6]
+    properties = Property.objects.all()
 
-    return render(request, "property-grid.html", {"properties": properties})
+    return render(request, "property-grid.html", {"properties": properties.order_by("id")[:6]})
 
 def property_single(request, slug):
     url = request.META.get('HTTP_REFERER')

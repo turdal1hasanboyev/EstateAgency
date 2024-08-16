@@ -10,7 +10,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('id', 'blog', 'name', 'email', 'website', 'user', 'created_at')
+    list_display = ('id', 'blog', 'name', 'email', 'web_site', 'user', 'created_at')
 
 
 @admin.register(Blog)

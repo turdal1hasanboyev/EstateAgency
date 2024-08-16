@@ -3,7 +3,7 @@ from django.db import models
 import uuid
 from django.template.defaultfilters import slugify 
 from django.urls import reverse
-from django.utils.translation import gettext_lazy as _
+
 from ckeditor.fields import RichTextField
 
 from apps.common.models import BaseModel
@@ -11,9 +11,9 @@ from apps.agent.models import Agent
 
 
 STATUS = (
-    (0, _("in_the_living")),
-    (1, _("sale")),
-    (2, _("rent")),
+    ("In_the_living", ("In_the_living")),
+    ("Sale", ("Sale")),
+    ("Rent", ("Rent")),
 )
 
 
@@ -26,7 +26,7 @@ class Property(BaseModel):
     price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     type = models.CharField(max_length=225, null=True, blank=True)
     agent = models.ForeignKey(Agent, on_delete=models.CASCADE, null=True, blank=True)
-    status = models.IntegerField(default=None, choices=STATUS, null=True, blank=True)
+    status = models.CharField(default=None, choices=STATUS, max_length=225, null=True, blank=True)
     area = models.IntegerField(default=0, null=True, blank=True)
     beds = models.IntegerField(default=0, null=True, blank=True)
     baths = models.IntegerField(default=0, null=True, blank=True)

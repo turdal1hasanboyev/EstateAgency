@@ -4,9 +4,9 @@ from apps.blog.models import Blog, Comment
 
 
 def blog(request):
-    blogs = Blog.objects.all().order_by("id")[:6]
+    blogs = Blog.objects.all()
 
-    return render(request, "blog-grid.html", {"blogs": blogs})
+    return render(request, "blog-grid.html", {"blogs": blogs.order_by("id")[:6]})
 
 def blog_single(request, slug):
     blog = Blog.objects.get(slug__iexact=slug)
@@ -17,7 +17,7 @@ def blog_single(request, slug):
         name = request.POST.get("name")
         email = request.POST.get("email")
         message = request.POST.get("message")
-        website = request.POST.get("website")
+        web_site = request.POST.get("website")
 
         Comment.objects.create(
             blog_id=blog.id,
@@ -25,7 +25,7 @@ def blog_single(request, slug):
             name=name,
             email=email,
             message=message,
-            website=website,
+            web_site=web_site,
         )
 
         return redirect("blog-single", blog.slug)

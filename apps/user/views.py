@@ -10,11 +10,11 @@ from apps.blog.models import Blog
 def about(request):
     about = About.objects.get(id=1)
 
-    agents = Agent.objects.all().order_by("-id")[:3]
+    agents = Agent.objects.all()
 
     context = {
         "about": about,
-        "agents": agents,
+        "agents": agents.order_by("-id")[:3],
     }
 
     return render(request, "about.html", context)
@@ -22,18 +22,18 @@ def about(request):
 def home(request):
     property = Property.objects.all()
     
-    services = Service.objects.all().order_by("-id")[:3]
-    best_agents = Agent.objects.all().order_by("id")[:3]
-    testimonials = Testimonials.objects.all().order_by("id")[:2]
-    latest_news = Blog.objects.all().order_by("-id")[:6]
+    services = Service.objects.all()
+    best_agents = Agent.objects.all()
+    testimonials = Testimonials.objects.all()
+    latest_news = Blog.objects.all()
      
     context = {
         "banner": property.order_by("-id")[:3],
-        "services": services,
+        "services": services.order_by("-id")[:3],
         "latest_properties": property.order_by("id")[:3],
-        "best_agents": best_agents,
-        "testimonials": testimonials,
-        "latest_news": latest_news,
+        "best_agents": best_agents.order_by("id")[:3],
+        "testimonials": testimonials.order_by("id")[:2],
+        "latest_news": latest_news.order_by("-id")[:6],
     }
 
     return render(request, 'index.html', context)
