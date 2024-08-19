@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from apps.common.models import Service, Testimonials
+from .models import Service, Testimonials
 
 
 @admin.register(Service)

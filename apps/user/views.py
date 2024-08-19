@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from apps.user.models import About
+from .models import About
 from apps.agent.models import Agent
 from apps.property.models import Property
 from apps.common.models import Service, Testimonials

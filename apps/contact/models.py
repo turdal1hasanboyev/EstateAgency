@@ -11,7 +11,7 @@ class Contact(BaseModel):
     subject = models.CharField(max_length=225, null=True, blank=True)
     message = RichTextField(null=True, blank=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{ self.id } - { self.name }"
 
 
@@ -21,5 +21,5 @@ class AgentContact(BaseModel):
     email = models.EmailField(unique=True, max_length=225, null=True, blank=True)
     message = RichTextField(null=True, blank=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{ self.id } - { self.agent }"

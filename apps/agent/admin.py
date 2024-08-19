@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from apps.agent.models import Agent
+from .models import Agent
 
 
 @admin.register(Agent)

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from apps.agent.models import Agent
+from .models import Agent
 from apps.property.models import Property
 
 

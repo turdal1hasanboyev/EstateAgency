@@ -12,7 +12,7 @@ from apps.common.models import BaseModel
 class Category(BaseModel):
     name = models.CharField(max_length=225, null=True, blank=True)
     
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{ self.id } - { self.name }"
 
 
@@ -33,7 +33,7 @@ class Blog(BaseModel):
 
         return super().save(*args, **kwargs)
     
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{ self.id } - { self.name }"
 
 
@@ -45,5 +45,5 @@ class Comment(BaseModel):
     web_site = models.URLField(unique=True, null=True, blank=True)
     message = RichTextField(null=True, blank=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{ self.id } - { self.name }"

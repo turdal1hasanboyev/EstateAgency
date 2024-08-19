@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from apps.property.models import Amenities, Property
+from .models import Amenities, Property
 
 
 @admin.register(Amenities)

@@ -11,7 +11,7 @@ class User(BaseModel, AbstractUser):
     profilephoto = models.ImageField(upload_to='profilephotos/', null=True, blank=True)
     phone = models.CharField(max_length=225, null=True, blank=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{ self.id } - { self.username }"
     
 
@@ -20,5 +20,5 @@ class About(BaseModel):
     bio = RichTextField(null=True, blank=True)
     avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{ self.id } - { self.name }"

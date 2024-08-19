@@ -1,6 +1,6 @@
 from django.urls import path
 
-from apps.agent.views import agent, agent_single
+from .views import agent, agent_single
 
 
 urlpatterns = [

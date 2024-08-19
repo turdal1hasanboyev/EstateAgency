@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from apps.blog.models import Blog, Comment
+from .models import Blog, Comment
 
 
 def blog(request):

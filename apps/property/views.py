@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from apps.property.models import Property, Amenities
+from .models import Property, Amenities
 from apps.contact.models import AgentContact
 
 

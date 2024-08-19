@@ -1,6 +1,6 @@
 from django.urls import path
 
-from apps.property.views import property, property_single
+from .views import property, property_single
 
 
 urlpatterns = [
